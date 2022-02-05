@@ -1,12 +1,16 @@
 import mongoose from 'mongoose';
-import { createSpinner } from 'nanospinner';
+import { createSpinner, Spinner } from 'nanospinner';
 import app from './app';
 import config from './config';
 
 //Spinner for dev env ;)
-const serverSpinner = createSpinner('Starting the server ...');
-const dbSpinner = createSpinner('Connecting to Mongo Database ...');
+let serverSpinner: Spinner;
+let dbSpinner: Spinner;
 
+if (config.NODE_ENV === 'development') {
+	serverSpinner = createSpinner('Starting the server ...');
+	dbSpinner = createSpinner('Connecting to Mongo Database ...');
+}
 //Connecting to MongoDB
 const db = config.DBURL.replace('<PASSWORD>', config.DBPASSWORD);
 
