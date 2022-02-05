@@ -10,6 +10,7 @@ import AppError from './util/appError.util';
 import errorHandler from './controller/error.controller';
 import studentRouter from './routes/student.route';
 import productRouter from './routes/product.route';
+import announcementRouter from './routes/announcement.route';
 
 const app: Express = express();
 
@@ -44,6 +45,8 @@ app.use(hpp({
 //USED routes
 app.use('/api/v1/student', studentRouter);
 app.use('/api/v1/product', productRouter);
+app.use('/api/v1/announcements', announcementRouter);
+
 
 //UNUSED ROUTES MIDDLEWARE
 app.use('*', (req: Request, res: Response, next: NextFunction) => {
