@@ -1,7 +1,7 @@
 import { GuidelinesModel } from '../model/guidelines.model';
-import { guidelinesCreateType } from '../schema/notice.schema';
+import { guidelinesSchemaType } from '../schema/notice.schema';
 
-async function create(data: guidelinesCreateType) {
+async function create(data: guidelinesSchemaType) {
 
 	const details = {
 		guidelinesTitle: data.guidelinesTitle,
@@ -15,7 +15,7 @@ async function get(id: string) {
 }
 
 async function getAll() {
-	return GuidelinesModel.find();
+	return await GuidelinesModel.find();
 }
 
 async function update(id: string, data: any) {

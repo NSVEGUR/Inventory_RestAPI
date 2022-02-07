@@ -1,11 +1,11 @@
 import { Request, Response, NextFunction } from 'express';
-import { guidelinesCreateType } from '../schema/notice.schema';
+import { guidelinesSchemaType } from '../schema/notice.schema';
 import Guidelines from '../service/guidelines.service';
 import AppError from '../util/appError.util';
 import catchAsync from '../util/catchAsync.util';
 
 const create = catchAsync(async function (
-	req: Request<{}, {}, guidelinesCreateType>,
+	req: Request<{}, {}, guidelinesSchemaType>,
 	res: Response,
 	next: NextFunction
 ) {
@@ -39,13 +39,14 @@ const get = catchAsync(async function (
 const getAll = catchAsync(async function (
 	req: Request, res: Response, next: NextFunction
 ) {
-	const guideliness = await Guidelines.getAll();
-	if (guideliness.length === 0) return next(new AppError('There are no guideliness to show, Please add', 404));
+	const guidelines = await Guidelines.getAll();
+	if (guidelines.length === 0) return next(new AppError('There are no guideliness to show, Please add', 404));
 	res.status(200).json({
 		status: 'success',
-		message: 'Guideliness fetched successfully',
+		message: 'Guidelines fetched successfully',
 		data: {
-			guideliness
+			quantity: guidelines.length,
+			guidelines
 		}
 	});
 });

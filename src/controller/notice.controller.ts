@@ -1,11 +1,11 @@
 import { Request, Response, NextFunction } from 'express';
-import { noticeCreateType } from '../schema/notice.schema';
+import { noticeSchemaType } from '../schema/notice.schema';
 import Notice from '../service/notice.service';
 import AppError from '../util/appError.util';
 import catchAsync from '../util/catchAsync.util';
 
 const create = catchAsync(async function (
-	req: Request<{}, {}, noticeCreateType>,
+	req: Request<{}, {}, noticeSchemaType>,
 	res: Response,
 	next: NextFunction
 ) {
@@ -45,6 +45,7 @@ const getAll = catchAsync(async function (
 		status: 'success',
 		message: 'Notices fetched successfully',
 		data: {
+			quantity: notices.length,
 			notices
 		}
 	});

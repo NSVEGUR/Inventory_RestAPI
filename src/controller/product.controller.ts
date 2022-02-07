@@ -1,11 +1,11 @@
 import { Request, Response, NextFunction } from 'express';
-import { productCreateType } from '../schema/product.schema';
+import { productSchemaType } from '../schema/product.schema';
 import Product from '../service/product.service';
 import AppError from '../util/appError.util';
 import catchAsync from '../util/catchAsync.util';
 
 const create = catchAsync(async function (
-	req: Request<{}, {}, productCreateType>,
+	req: Request<{}, {}, productSchemaType>,
 	res: Response,
 	next: NextFunction
 ) {
@@ -43,6 +43,7 @@ const getAll = catchAsync(async function (
 		status: 'success',
 		message: 'Products fetched successfully',
 		data: {
+			quantity: products.length,
 			products
 		}
 	});

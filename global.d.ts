@@ -7,8 +7,8 @@ export namespace NodeJS {
 		JWT_SECRET: string;
 		JWT_EXPIRES_IN: string;
 		JWT_COOKIE_EXPIRES_IN: string;
-		HEAD_NAME: string;
-		HEAD_PASSWORD: string;
+		ADMIN_NAME: string;
+		ADMIN_PASSWORD: string;
 	}
 }
 

@@ -15,11 +15,11 @@ export interface lendHistory {
 export class Product {
 	[x: string]: any;
 
-	@prop({ required: true })
+	@prop({ required: true, unique: true })
 	productName: string;
 
 	@prop({ required: true })
-	isAvailable: boolean;
+	isAvailable: string;
 
 	@prop({ required: true, type: mongoose.Schema.Types.Mixed })
 	lendHistory: lendHistory[];

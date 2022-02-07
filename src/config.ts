@@ -12,8 +12,8 @@ interface ENV {
 	JWT_SECRET: string | undefined;
 	JWT_EXPIRES_IN: string | undefined;
 	JWT_COOKIE_EXPIRES_IN: string | undefined;
-	HEAD_NAME: string | undefined;
-	HEAD_PASSWORD: string | undefined;
+	ADMIN_NAME: string | undefined;
+	ADMIN_PASSWORD: string | undefined;
 }
 
 
@@ -25,8 +25,8 @@ interface Config {
 	JWT_SECRET: string;
 	JWT_EXPIRES_IN: string;
 	JWT_COOKIE_EXPIRES_IN: string;
-	HEAD_NAME: string;
-	HEAD_PASSWORD: string;
+	ADMIN_NAME: string;
+	ADMIN_PASSWORD: string;
 }
 
 // Loading process.env as ENV interface
@@ -40,8 +40,8 @@ const getConfig = (): ENV => {
 		JWT_SECRET: process.env.JWT_SECRET,
 		JWT_EXPIRES_IN: process.env.JWT_EXPIRES_IN,
 		JWT_COOKIE_EXPIRES_IN: process.env.JWT_COOKIE_EXPIRES_IN,
-		HEAD_NAME: process.env.HEAD_NAME,
-		HEAD_PASSWORD: process.env.HEAD_PASSWORD,
+		ADMIN_NAME: process.env.ADMIN_NAME,
+		ADMIN_PASSWORD: process.env.ADMIN_PASSWORD,
 	};
 };
 

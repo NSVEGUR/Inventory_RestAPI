@@ -1,7 +1,7 @@
 import { lendHistory, ProductModel } from '../model/product.model';
-import { productCreateType } from '../schema/product.schema';
+import { productSchemaType } from '../schema/product.schema';
 
-async function create(data: productCreateType) {
+async function create(data: productSchemaType) {
 
 	const details = {
 		productName: data.productName,
