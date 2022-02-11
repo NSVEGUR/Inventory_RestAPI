@@ -9,7 +9,7 @@ const handleCastErrorDB = (err: any) => {
 
 const handleDuplicateFieldsErrorDB = (err: any) => {
 	const value = err.keyValue[Object.keys(err.keyValue)[0]];
-	const message = `${value} Exist!`;
+	const message = `${value} exist!`;
 	return (new AppError(message, 400));
 }
 
