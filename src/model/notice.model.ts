@@ -6,10 +6,10 @@ export class Notice {
 	[x: string]: any;
 
 	@prop({ required: true })
-	noticeTitle: string;
+	title: string;
 
 	@prop({ required: true })
-	noticeDescription: string;
+	description: string;
 }
 
 

@@ -10,10 +10,10 @@ export class Guidelines {
 	[x: string]: any;
 
 	@prop({ required: true })
-	guidelinesTitle: string;
+	title: string;
 
 	@prop({ required: true, type: mongoose.Schema.Types.Mixed })
-	guidelines: string[] | string;
+	description: string[] | string;
 }
 
 export const GuidelinesModel = getModelForClass(Guidelines);
