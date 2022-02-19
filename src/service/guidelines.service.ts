@@ -4,8 +4,8 @@ import { guidelinesSchemaType } from '../schema/notice.schema';
 async function create(data: guidelinesSchemaType) {
 
 	const details = {
-		guidelinesTitle: data.guidelinesTitle,
-		guidelines: data.guidelines
+		title: data.title,
+		description: data.description,
 	}
 	return await GuidelinesModel.create(details);
 };
